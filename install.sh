@@ -31,7 +31,7 @@ set -e
 
 export GITHUB_SOURCE="v1.0.0"
 export SCRIPT_RELEASE="v1.0.0"
-export GITHUB_BASE_URL="https://raw.githubusercontent.com/LeXcZxMoDz9/pterodactyl-installer"
+export GITHUB_BASE_URL="https://raw.githubusercontent.com/LeXcZxMoDz9/Installer"
 
 CHEMIN_LOG="/var/log/pterodactyl-installer.log"
 
@@ -44,7 +44,7 @@ fi
 
 # Supprimer toujours lib.sh avant de le télécharger
 rm -rf /tmp/lib.sh
-curl -sSL -o /tmp/lib.sh "$GITHUB_BASE_URL"/"$GITHUB_SOURCE"/lib/lib.sh
+curl -sSL -o /tmp/lib.sh https://raw.githubusercontent.com/LeXcZxMoDz9/Installer/refs/heads/main/lib/lib.sh
 # shellcheck source=lib/lib.sh
 source /tmp/lib.sh
 
