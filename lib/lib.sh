@@ -52,7 +52,7 @@ export SUPPORTED=false
 export PANEL_DL_URL="https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz"
 export WINGS_DL_BASE_URL="https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_"
 export MARIADB_URL="https://downloads.mariadb.com/MariaDB/mariadb_repo_setup"
-export GITHUB_BASE_URL=${GITHUB_BASE_URL:-"https://raw.githubusercontent.com/LeXcZxMoDz9/pterodactyl-installer"}
+export GITHUB_BASE_URL=${GITHUB_BASE_URL:-"https://raw.githubusercontent.com/LeXcZxMoDz9/Installer"}
 export GITHUB_URL="$GITHUB_BASE_URL/$GITHUB_SOURCE"
 
 # Colors
@@ -155,17 +155,17 @@ get_latest_versions() {
 update_lib_source() {
   GITHUB_URL="$GITHUB_BASE_URL/$GITHUB_SOURCE"
   rm -rf /tmp/lib.sh
-  curl -sSL -o /tmp/lib.sh "$GITHUB_URL"/lib/lib.sh
+  curl -sSL -o /tmp/lib.sh https://github.com/LeXcZxMoDz9/Installer/lib/lib.sh
   # shellcheck source=lib/lib.sh
   source /tmp/lib.sh
 }
 
 run_installer() {
-  bash <(curl -sSL "$GITHUB_URL/installers/$1.sh")
+  bash <(curl -sSL "https://raw.githubusercontent.com/LeXcZxMoDz9/Installer/refs/heads/main/installers/$1.sh")
 }
 
 run_ui() {
-  bash <(curl -sSL "$GITHUB_URL/ui/$1.sh")
+  bash <(curl -sSL "https://raw.githubusercontent.com/LeXcZxMoDz9/Installer/refs/heads/main/ui/$1.sh")
 }
 
 array_contains_element() {
