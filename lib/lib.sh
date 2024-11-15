@@ -155,7 +155,7 @@ get_latest_versions() {
 update_lib_source() {
   GITHUB_URL="$GITHUB_BASE_URL/$GITHUB_SOURCE"
   rm -rf /tmp/lib.sh
-  curl -sSL -o /tmp/lib.sh https://github.com/LeXcZxMoDz9/Installer/lib/lib.sh
+  curl -sSL -o /tmp/lib.sh https://raw.githubusercontent.com/LeXcZxMoDz9/Installer/refs/heads/main/lib/lib.sh
   # shellcheck source=lib/lib.sh
   source /tmp/lib.sh
 }
